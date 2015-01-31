@@ -3,6 +3,10 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+#IDEA IntelliJ (Ouais ouais je m'essaye à de ces trucs je vous jure je suis étudiant)
+.idea/
+imr-timeplanning.iml
+
 # Package Files #
 *.jar
 *.war
