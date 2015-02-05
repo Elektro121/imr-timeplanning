@@ -6,6 +6,7 @@
 #IDEA IntelliJ (Ouais ouais je m'essaye à de ces trucs je vous jure je suis étudiant)
 .idea/
 imr-timeplanning.iml
+out/
 
 # Package Files #
 *.jar
