@@ -32,7 +32,7 @@ public class Salle extends Ressource {
         
         private String name = "";
 
-        TypeSalle(String name) {
+        Equipements(String name) {
             this.name = name;
 
         }
