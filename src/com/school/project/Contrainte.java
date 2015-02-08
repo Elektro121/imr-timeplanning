@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
  */
 public class Contrainte {
     private ArrayList<PlageHoraire> plagesContraintes;
-    private ArrayList<int> repetitionJoursSemaine;
+    private ArrayList<Integer> repetitionJoursSemaine;
     private GregorianCalendar Jour;
     private Ressource ressourceContrainte;
     private String raison;
