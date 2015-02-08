@@ -1,7 +1,5 @@
 package com.school.project;
 
-import java.lang.reflect.Type;
-
 /**
  * Created on 05/02/2015.
  */
