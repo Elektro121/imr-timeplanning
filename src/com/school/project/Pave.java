@@ -5,7 +5,22 @@ package com.school.project;
  */
 public class Pave {
     public enum TypeCours {
-        CM, TD, TP, PROJET, DS,
+        CM("Cours Magistral"),
+        TD("Travaux Dirigés"),
+        TP("Travaux Pratiques"),
+        PROJET("Projet"),
+        DS("Devoir Surveillé"),
+
+        private String name = "";
+
+        TypeCours(String name) {
+            this.name = name;
+
+        }
+        @Override
+        public String toString() {
+            return name;
+        }
     }
     private TypeCours type;
     private Salle salle;
