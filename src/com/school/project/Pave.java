@@ -9,7 +9,7 @@ public class Pave {
         TD("Travaux Dirigés"),
         TP("Travaux Pratiques"),
         PROJET("Projet"),
-        DS("Devoir Surveillé"),
+        DS("Devoir Surveillé");
 
         private String name = "";
 
