@@ -28,13 +28,13 @@ public class Pave {
         }
     }
     
-    private TypeCours type;
-    private Salle salle;
-    private java.util.ArrayList<Intervenant> intervenants;
-    private java.util.ArrayList<GroupeEtudiants> groupes;
-    private PlageHoraire plage;
-    private java.util.GregorianCalendar jour;
-    private Matiere matiere;
+    TypeCours type;
+    Salle salle;
+    java.util.ArrayList<Intervenant> intervenants;
+    java.util.ArrayList<GroupeEtudiants> groupes;
+    PlageHoraire plage;
+    java.util.GregorianCalendar jour;
+    Matiere matiere;
 
     private Pave(TypeCours type, Matiere matiere, PlageHoraire plage, GregorianCalendar jour,
                  Salle salle) {
