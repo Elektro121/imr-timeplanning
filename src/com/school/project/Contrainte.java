@@ -101,21 +101,32 @@ public class Contrainte {
     }
     
     public boolean verifContrainte(Pave paveAVerifier) {
-        if (this.repetitionJoursSemaine == null) {
-            if ((this.jour.equals(paveAVerifier.jour))) {
-                for(PlageHoraire plageContrainte: this.plagesContraintes) {
-                    if(plageContrainte == paveAVerifier.plage) {
-                        return false;
-                    }
-                }
-            }
-        }
-        if (this.jour == null) {
-            for(Integer jourBloque: repetitionJoursSemaine) {
-                if((jourBloque == this.jour.get(GregorianCalendar.DAY_OF_WEEK))) {
+        //On vérifie que la contrainte et un des éléments du pavé concordent
+        if(ressourceContrainte.equals(paveAVerifier.salle) ||
+                ressourceContrainte.equals(paveAVerifier.intervenants) ||
+                ressourceContrainte.equals(paveAVerifier.groupes)) {
+            //Si la contrainte est configurée sur le jour
+            if (this.repetitionJoursSemaine == null) {
+                //Si le jour de la contrainte et le jour du pavé concordent
+                if ((this.jour.equals(paveAVerifier.jour))) {
                     for(PlageHoraire plageContrainte: this.plagesContraintes) {
                         if(plageContrainte == paveAVerifier.plage) {
                             return false;
+                        }
+                    }
+                }
+            }
+            //Si la contrainte est configurée sur les répétitions de jours
+            if (this.jour == null) {
+                // On foreach chaque jour qui peut êtree bloqué
+                for(Integer jourBloque: repetitionJoursSemaine) {
+                    //Dès que l'on trouve un jour qui est égal à notre jour
+                    if((jourBloque == this.jour.get(GregorianCalendar.DAY_OF_WEEK))) {
+                        // On vérifie ses plages horaires via un autre foreach
+                        for(PlageHoraire plageContrainte: this.plagesContraintes) {
+                            if(plageContrainte == paveAVerifier.plage) {
+                                return false;
+                            }
                         }
                     }
                 }
