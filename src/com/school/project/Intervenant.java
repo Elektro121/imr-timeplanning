@@ -7,4 +7,9 @@ public class Intervenant extends Ressource {
     public Intervenant(String nom) {
         super(nom);
     }
+
+    @Override
+    public String toString() {
+        return "Intervenant " + nom;
+    }
 }

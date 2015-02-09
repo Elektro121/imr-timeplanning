@@ -95,4 +95,23 @@ public class Salle extends Ressource {
         this.capacity = 40;
         this.equipements = new ArrayList<Equipements>();
     }
+
+    public String toStringPlus() {
+        String totalequipements = null;
+        for (Equipements s: equipements) {
+            totalequipements += s;
+            totalequipements += "\n";
+        }
+        
+        return "--[" + nom + "]--\n" +
+                this.type + "pour" + capacity + "personne(s)\n" +
+                "Equipements :\n" +
+                totalequipements;
+    
+    }
+
+    @Override
+    public String toString() {
+        return "Salle" + nom;
+    }
 }

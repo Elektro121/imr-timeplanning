@@ -1,6 +1,7 @@
 package com.school.project;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.GregorianCalendar;
 
@@ -59,5 +60,26 @@ public class Pave {
 
         this.groupes = new ArrayList<GroupeEtudiants>();
         this.groupes.addAll(plusieursGroupesEtudiants);
+    }
+
+    @Override
+    public String toString() {
+        String listeIntervenants = null;
+        String listeGroupes = null;
+        for(Intervenant i: intervenants) {
+            listeIntervenants += i.nom;
+            listeIntervenants += ";";
+        }
+
+        for (GroupeEtudiants g: groupes) {
+            listeGroupes += g.nom;
+            listeGroupes += ";";
+        }
+        
+        return  "---- Pave ----\n" +
+                type + " " + matiere + " en " + salle +
+                "Le "+ jour.get(Calendar.DAY_OF_MONTH) + "/" + jour.get(Calendar.MONTH) + "/" + jour.get(Calendar.YEAR) + " à " + plage + "\n" +
+                "Avec " +  listeIntervenants + "pour " + listeGroupes;
+                
     }
 }

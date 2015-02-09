@@ -1,6 +1,7 @@
 package com.school.project;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.GregorianCalendar;
 
@@ -54,5 +55,48 @@ public class Contrainte {
         
         this.repetitionJoursSemaine = new ArrayList<Integer>();
         this.repetitionJoursSemaine.addAll(repetitionJoursSemaine);
+    }
+
+    @Override
+    public String toString() {
+        String resultat=null;
+        resultat += "Contrainte de" + ressourceContrainte + "pour les horaires suivants :\n";
+        for(PlageHoraire p:plagesContraintes) {
+            resultat += p;
+            resultat += "\n";
+        }
+        if(jour == null) {
+            resultat += "Pour les périodes suivantes : \n";
+            for (Integer i : repetitionJoursSemaine) {
+                switch (i) {
+                    case GregorianCalendar.MONDAY:
+                        resultat += "Lundi";
+                        break;
+                    case GregorianCalendar.TUESDAY:
+                        resultat += "Mardi";
+                        break;
+                    case GregorianCalendar.WEDNESDAY:
+                        resultat += "Mercredi";
+                        break;
+                    case GregorianCalendar.THURSDAY:
+                        resultat += "Jeudi";
+                        break;
+                    case GregorianCalendar.FRIDAY:
+                        resultat += "Vendredi";
+                        break;
+                    case GregorianCalendar.SATURDAY:
+                        resultat += "Samedi";
+                        break;
+                    case GregorianCalendar.SUNDAY:
+                        resultat += "Dimanche";
+                        break;
+                }
+                resultat += "\n";
+            }
+        }
+        else {
+                resultat += "Le "+ jour.get(Calendar.DAY_OF_MONTH) + "/" + jour.get(Calendar.MONTH) + "/" + jour.get(Calendar.YEAR) +"\n";
+            }
+        return resultat;
     }
 }

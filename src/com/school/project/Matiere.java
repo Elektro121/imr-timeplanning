@@ -8,4 +8,9 @@ public class Matiere extends Ressource {
         super(nom);
         
     }
+
+    @Override
+    public String toString() {
+        return "Matiere " + nom;
+    }
 }
