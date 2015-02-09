@@ -102,7 +102,7 @@ public class Contrainte {
     
     public boolean verifContrainte(Pave paveAVerifier) {
         if (this.repetitionJoursSemaine == null) {
-            if ((this.jour.equals(paveAVerifier.jour)) {
+            if ((this.jour.equals(paveAVerifier.jour))) {
                 for(PlageHoraire plageContrainte: this.plagesContraintes) {
                     if(plageContrainte == paveAVerifier.plage) {
                         return false;
