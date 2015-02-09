@@ -62,6 +62,17 @@ public class Pave {
         this.groupes.addAll(plusieursGroupesEtudiants);
     }
 
+    public Pave(TypeCours type, Matiere matiere, PlageHoraire plage, GregorianCalendar jour,
+                Salle salle, Intervenant intervenant, GroupeEtudiants groupeEtudiants) {
+        this(type, matiere, plage, jour, salle);
+
+        this.intervenants = new ArrayList<Intervenant>();
+        this.intervenants.add(intervenant);
+
+        this.groupes = new ArrayList<GroupeEtudiants>();
+        this.groupes.add(groupeEtudiants);
+    }
+    
     @Override
     public String toString() {
         String listeIntervenants = null;
