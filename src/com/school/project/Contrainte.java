@@ -99,4 +99,29 @@ public class Contrainte {
             }
         return resultat;
     }
+    
+    public boolean verifContrainte(Pave paveAVerifier) {
+        if (this.repetitionJoursSemaine == null) {
+            if ((this.jour.equals(paveAVerifier.jour)) {
+                for(PlageHoraire plageContrainte: this.plagesContraintes) {
+                    if(plageContrainte == paveAVerifier.plage) {
+                        return false;
+                    }
+                }
+            }
+        }
+        if (this.jour == null) {
+            for(Integer jourBloque: repetitionJoursSemaine) {
+                if((jourBloque == this.jour.get(GregorianCalendar.DAY_OF_WEEK))) {
+                    for(PlageHoraire plageContrainte: this.plagesContraintes) {
+                        if(plageContrainte == paveAVerifier.plage) {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+        return true;
+    }
+    
 }
