@@ -5,4 +5,9 @@ package com.school.project;
  */
 public abstract class Ressource {
     private String nom;
+    
+    public Ressource(String nom) {
+        this.nom = nom;
+        
+    }
 }

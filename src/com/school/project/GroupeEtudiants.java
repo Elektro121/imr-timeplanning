@@ -6,4 +6,15 @@ package com.school.project;
 public class GroupeEtudiants extends Ressource {
     int promotion;
     String groupe;
+
+    public GroupeEtudiants(String nom, int promotion, String groupe) {
+        this(nom, promotion);
+        this.groupe = groupe;
+        
+    }
+
+    public GroupeEtudiants(String nom, int promotion) {
+        super(nom);
+        this.promotion = promotion;
+    }
 }
