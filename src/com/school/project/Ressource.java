@@ -10,4 +10,8 @@ public abstract class Ressource {
         this.nom = nom;
         
     }
+
+    public boolean equals(Ressource o) {
+        return (this.nom == o.nom);
+    }
 }
