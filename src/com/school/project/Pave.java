@@ -75,22 +75,23 @@ public class Pave {
     
     @Override
     public String toString() {
-        String listeIntervenants = null;
-        String listeGroupes = null;
+        String listeIntervenants = "";
+        String listeGroupes = "";
         for(Intervenant i: intervenants) {
             listeIntervenants += i.nom;
-            listeIntervenants += ";";
+            listeIntervenants += "; ";
         }
+        listeIntervenants = listeIntervenants.substring(0, listeIntervenants.length()-2);
 
         for (GroupeEtudiants g: groupes) {
             listeGroupes += g.nom;
-            listeGroupes += ";";
+            listeGroupes += "; ";
         }
+        listeGroupes = listeGroupes.substring(0, listeGroupes.length()-2);
         
-        return  "---- Pave ----\n" +
-                type + " " + matiere + " en " + salle +
+        return  type + " " + matiere + " en " + salle + "\n" +
                 "Le "+ jour.get(Calendar.DAY_OF_MONTH) + "/" + jour.get(Calendar.MONTH) + "/" + jour.get(Calendar.YEAR) + " à " + plage + "\n" +
-                "Avec " +  listeIntervenants + "pour " + listeGroupes;
+                "Avec " +  listeIntervenants + " pour " + listeGroupes;
                 
     }
 }

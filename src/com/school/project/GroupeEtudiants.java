@@ -10,7 +10,6 @@ public class GroupeEtudiants extends Ressource {
     public GroupeEtudiants(String nom, int promotion, String groupe) {
         this(nom, promotion);
         this.groupe = groupe;
-        
     }
 
     public GroupeEtudiants(String nom, int promotion) {

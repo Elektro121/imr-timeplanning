@@ -11,6 +11,6 @@ public class Matiere extends Ressource {
 
     @Override
     public String toString() {
-        return "Matiere " + nom;
+        return nom;
     }
 }

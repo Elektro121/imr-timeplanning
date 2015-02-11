@@ -112,6 +112,6 @@ public class Salle extends Ressource {
 
     @Override
     public String toString() {
-        return "Salle" + nom;
+        return "Salle " + nom;
     }
 }
