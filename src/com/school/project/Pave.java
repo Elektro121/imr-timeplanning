@@ -9,6 +9,7 @@ import java.util.GregorianCalendar;
  * Created on 05/02/2015.
  */
 public class Pave {
+    
     public enum TypeCours {
         CM("Cours Magistral"),
         TD("Travaux Dirigés"),
@@ -72,7 +73,34 @@ public class Pave {
         this.groupes = new ArrayList<GroupeEtudiants>();
         this.groupes.add(groupeEtudiants);
     }
-    
+
+    /**
+     * Vérifie si la ressource sélectionnée par son nom est présente 
+     * @param nom
+     * @return
+     */
+    public boolean ressourceEstPresente(String nom) {
+        // On regarde la salle
+        if(nom == salle.nom) {
+            return true;
+        }
+        // Itération de tout les intervenants du pavé
+        for (Intervenant i:this.intervenants) {
+            if (nom == i.nom) {
+                return true;
+            }
+        }
+        // Itération de tout les groupes du pavé
+        for (GroupeEtudiants g:this.groupes) {
+            if (nom == g.nom) {
+                return true;
+            }
+        }
+        // Si aucune des conditions n'ont pas fait retourné une valeur, on retourne false
+        return false;
+    }
+
+
     @Override
     public String toString() {
         String listeIntervenants = "";
