@@ -89,7 +89,7 @@ public class Pave {
         }
         listeGroupes = listeGroupes.substring(0, listeGroupes.length()-2);
         
-        return  type + " " + matiere + " en " + salle + "\n" +
+        return  type + " de " + matiere + " en " + salle + "\n" +
                 "Le "+ jour.get(Calendar.DAY_OF_MONTH) + "/" + (jour.get(Calendar.MONTH)+1) + "/" + jour.get(Calendar.YEAR) + " à " + plage + "\n" +
                 "Avec " +  listeIntervenants + " pour " + listeGroupes;
                 
