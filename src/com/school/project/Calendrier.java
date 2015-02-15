@@ -58,41 +58,6 @@ public class Calendrier {
     }
 
     /**
-     * Fonction qui vérifie qu'aucun objet dans le pavé n'est nul
-     * @param paveAVerifier
-     * @return
-     */
-    public boolean verifNull(Pave paveAVerifier) {
-        boolean bPavePossedePasDeNull = true;
-        
-        if(paveAVerifier.salle == null) {
-            bPavePossedePasDeNull = false;
-            return bPavePossedePasDeNull;
-        }
-        
-        if (paveAVerifier.jour == null) {
-            bPavePossedePasDeNull = false;
-            return bPavePossedePasDeNull;
-        }
-        
-        for(Intervenant i: paveAVerifier.intervenants) {
-            if (i == null) {
-                bPavePossedePasDeNull = false;
-                return bPavePossedePasDeNull;
-            }
-        }
-
-        for(GroupeEtudiants g: paveAVerifier.groupes) {
-            if (g == null) {
-                bPavePossedePasDeNull = false;
-                return bPavePossedePasDeNull;
-            }
-        }
-        
-        return bPavePossedePasDeNull;
-    }
-
-    /**
      * Fonction qui vérifie que le pavé n'entre pas en conflit avec les contraintes mises en place 
      * @param paveAVerifier
      * @return
@@ -164,7 +129,7 @@ public class Calendrier {
     public void addPave(Pave.TypeCours type, Matiere matiere, PlageHoraire plage, GregorianCalendar jour,
                         Salle salle, Collection<Intervenant> plusieursIntervenants, Collection<GroupeEtudiants> plusieursGroupesEtudiants) {
         Pave newPave = new Pave(type, matiere, plage, jour, salle, plusieursIntervenants, plusieursGroupesEtudiants);
-        if(this.verifNull(newPave)) {
+        if(newPave.verifNull()) {
             if(this.verifContraintes(newPave)) {
                 if(this.verifDoublon(newPave)){
                     this.listePaves.add(newPave);

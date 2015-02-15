@@ -100,7 +100,39 @@ public class Pave {
         return false;
     }
 
+    /**
+     * Fonction qui vérifie qu'aucun objets dans le pavé n'est nul
+     * @return
+     */
+    public boolean verifNull() {
+        boolean bPavePossedePasDeNull = true;
 
+        if(this.salle == null) {
+            bPavePossedePasDeNull = false;
+            return bPavePossedePasDeNull;
+        }
+
+        if (this.jour == null) {
+            bPavePossedePasDeNull = false;
+            return bPavePossedePasDeNull;
+        }
+
+        for(Intervenant i: this.intervenants) {
+            if (i == null) {
+                bPavePossedePasDeNull = false;
+                return bPavePossedePasDeNull;
+            }
+        }
+
+        for(GroupeEtudiants g: this.groupes) {
+            if (g == null) {
+                bPavePossedePasDeNull = false;
+                return bPavePossedePasDeNull;
+            }
+        }
+
+        return bPavePossedePasDeNull;
+    }
     @Override
     public String toString() {
         String listeIntervenants = "";
