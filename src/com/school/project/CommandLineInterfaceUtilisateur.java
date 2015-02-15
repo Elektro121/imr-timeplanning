@@ -7,8 +7,12 @@ import java.util.Scanner;
  * Created on 31/01/2015.
  */
 public class CommandLineInterfaceUtilisateur {
-    static int executionDuProgramme = 1;
     static Calendrier cal;
+
+    /**
+     * Interface en ligne de commande interactive afin de manipuler les objets Calendriers
+     * @param args
+     */
     public static void main(String[] args) {
         while(true) {
             Integer reponse = Integer.parseInt(prompt("1. Lancer les tests\n" +
@@ -25,7 +29,12 @@ public class CommandLineInterfaceUtilisateur {
             }
         }
     }
-    
+
+    /**
+     * Demande à l'utilsateur d'entrer une chaine de caractère 
+     * @param choix phrase affichée à l'utilisateur
+     * @return
+     */
     public static String prompt(String choix) {
         Scanner entree = new Scanner(System.in);
         System.out.println(choix);
