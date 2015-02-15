@@ -77,6 +77,8 @@ public class Pave {
     public String toString() {
         String listeIntervenants = "";
         String listeGroupes = "";
+        String jour = "";
+        
         for(Intervenant i: intervenants) {
             listeIntervenants += i.nom;
             listeIntervenants += "; ";
@@ -89,8 +91,32 @@ public class Pave {
         }
         listeGroupes = listeGroupes.substring(0, listeGroupes.length()-2);
         
+        switch (this.jour.get(GregorianCalendar.DAY_OF_WEEK)) {
+            case GregorianCalendar.MONDAY:
+                jour = "lundi";
+                break;
+            case GregorianCalendar.TUESDAY:
+                jour = "mardi";
+                break;
+            case GregorianCalendar.WEDNESDAY:
+                jour = "mercredi";
+                break;
+            case GregorianCalendar.THURSDAY:
+                jour = "jeudi";
+                break;
+            case GregorianCalendar.FRIDAY:
+                jour = "vendredi";
+                break;
+            case GregorianCalendar.SATURDAY:
+                jour = "samedi";
+                break;
+            case GregorianCalendar.SUNDAY:
+                jour = "dimanche";
+                break;
+        }
+        
         return  type + " de " + matiere + " en " + salle + "\n" +
-                "Le "+ jour.get(Calendar.DAY_OF_MONTH) + "/" + (jour.get(Calendar.MONTH)+1) + "/" + jour.get(Calendar.YEAR) + " à " + plage + "\n" +
+                "Le " + jour + " " + this.jour.get(Calendar.DAY_OF_MONTH) + "/" + (this.jour.get(Calendar.MONTH)+1) + "/" + this.jour.get(Calendar.YEAR) + " à " + plage + "\n" +
                 "Avec " +  listeIntervenants + " pour " + listeGroupes;
                 
     }
