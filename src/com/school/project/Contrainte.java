@@ -104,9 +104,7 @@ public class Contrainte {
     
     public boolean verifContrainte(Pave paveAVerifier) {
         //On vérifie que la contrainte et un des éléments du pavé concordent
-        if(ressourceContrainte.equals(paveAVerifier.salle) ||
-                ressourceContrainte.equals(paveAVerifier.intervenants) ||
-                ressourceContrainte.equals(paveAVerifier.groupes)) {
+        if(paveAVerifier.ressourceEstPresente(this.ressourceContrainte.nom)) {
             //Si la contrainte est configurée sur le jour
             if (this.repetitionJoursSemaine == null) {
                 //Si le jour de la contrainte et le jour du pavé concordent
@@ -118,12 +116,13 @@ public class Contrainte {
                     }
                 }
             }
+
             //Si la contrainte est configurée sur les répétitions de jours
             if (this.jour == null) {
                 // On foreach chaque jour qui peut êtree bloqué
                 for(Integer jourBloque: repetitionJoursSemaine) {
                     //Dès que l'on trouve un jour qui est égal à notre jour
-                    if((jourBloque == this.jour.get(GregorianCalendar.DAY_OF_WEEK))) {
+                    if((jourBloque == paveAVerifier.jour.get(GregorianCalendar.DAY_OF_WEEK))) {
                         // On vérifie ses plages horaires via un autre foreach
                         for(PlageHoraire plageContrainte: this.plagesContraintes) {
                             if(plageContrainte == paveAVerifier.plage) {
@@ -134,6 +133,7 @@ public class Contrainte {
                 }
             }
         }
+        // Si rien n'a été retourné par les conditions, on retourne que le pavé n'a pas de contrainte
         return true;
     }
     
