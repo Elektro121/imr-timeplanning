@@ -22,6 +22,8 @@ public class Contrainte {
 
     private Contrainte(Ressource ressourceContrainte, String raison, Collection<PlageHoraire> plageContrainte) {
         this(ressourceContrainte, raison);
+        
+        this.plagesContraintes = new ArrayList<PlageHoraire>();
         this.plagesContraintes.addAll(plageContrainte);
     }
 
