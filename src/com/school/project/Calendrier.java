@@ -242,11 +242,14 @@ public class Calendrier {
      */
     public void listeDesPaves(Intervenant intervenant) {
         Pave paveSelectionne;
+        //Nous avons besoin de l'index de chaque pavé, d'ou la boucle for
         for (int i = 0; i < listePaves.size(); i++) {
             paveSelectionne = listePaves.get(i);
+            //Itération pour vérifier l'intervenant
             for(Intervenant intervenantListe:paveSelectionne.intervenants) {
                 if (intervenant == intervenantListe) {
                     this.showPave(i);
+                    //On ne trouvera qu'une fois l'intervenant dans un seul pavé
                     break;
                 }
             } 
