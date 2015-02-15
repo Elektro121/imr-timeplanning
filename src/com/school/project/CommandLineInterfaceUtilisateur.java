@@ -5,7 +5,7 @@ import java.util.GregorianCalendar;
 /**
  * Created on 31/01/2015.
  */
-public class Main {
+public class CommandLineInterfaceUtilisateur {
     public static void main() {
         
     }
