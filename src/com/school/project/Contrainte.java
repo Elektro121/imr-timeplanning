@@ -61,8 +61,8 @@ public class Contrainte {
 
     @Override
     public String toString() {
-        String resultat=null;
-        resultat += "Contrainte de" + ressourceContrainte + "pour les horaires suivants :\n";
+        String resultat = "";
+        resultat += "Contrainte de " + ressourceContrainte + " pour les horaires suivants :\n";
         for(PlageHoraire p:plagesContraintes) {
             resultat += p;
             resultat += "\n";
